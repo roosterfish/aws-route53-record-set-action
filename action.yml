@@ -1,0 +1,40 @@
+name: AWS Route 53 Record Set
+author: Julian Pelizäus <jp@adformc.de>
+branding:
+  icon: cloud
+  color: gray-dark
+description: Create Route 53 Record Sets
+inputs:
+  aws_access_key_id:
+    description: The AWS access key id
+    required: true
+  aws_secret_access_key:
+    description: The AWS secret access key
+    required: true
+  aws_route53_hosted_zone_id:
+    description: The id of the hosted zone
+    required: true
+  aws_route53_rr_action:
+    description: The action that should be taken
+    required: true
+  aws_route53_rr_name:
+    description: The name of the record set
+    required: true
+  aws_route53_rr_type:
+    description: The type of the record set
+    required: true
+  aws_route53_rr_ttl:
+    description: The TTL of the record set
+    required: true
+  aws_route53_rr_value:
+    description: The value of the record set
+    required: true
+  aws_route53_rr_comment:
+    description: A comment used for the resource record
+    required: false
+  aws_route53_wait:
+    description: Wait until the record set is fully settled in
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
